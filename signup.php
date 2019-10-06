@@ -8,19 +8,18 @@
     $dbname = 'heroku_f4436271c441c5d';
     $conn = mysqli_connect($dbhost, $dbuser, $dbpass,$dbname);
 
-    /* if(isset($_POST['username']) ){
-        $gaveuname = $_POST['username'];
-        $gavepsw = $_POST['password'];
-        $gaveconfpass = $_Post['confpassword'];
+     if(isset($_POST['username']) ){
+     $gaveuname = $_POST['username'];
+     $gavepsw = $_POST['password'];
+     $gaveconfpass = $_Post['confpassword'];
 
-        //If the password and confirm password do not match
-        if( !($_POST['password'] == $_Post['confpassword']) ){
-
-            //Print and error message and do not go further with the script in this call
-            echo '<a href ="signup.php"> Please make sure your entered passwords match </a>';
-            exit();
-        }
-
+     //If the password and confirm password do not match
+     if( !($_POST['password'] == $_Post['confpassword']) ){
+         //Print and error message and do not go further with the script in this call
+         echo '<a href ="signup.php"> Please make sure your entered passwords match </a>';
+         exit();
+     }
+        /*
         //Make a Query to select one user from siteusers table in database that has a username matching the ones given by the form
         $sql_query = "select * from siteusers WHERE username= '".$gaveuname."' limit 1";
         //capture the result of the query

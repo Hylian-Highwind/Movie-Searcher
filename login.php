@@ -7,7 +7,7 @@
     $dbname = 'heroku_f4436271c441c5d';
     $conn = mysqli_connect($dbhost, $dbuser, $dbpass,$dbname);
 
-    if(isset(['username'])){
+    if(isset($_POST['username'])){
         $gaveuname = $_POST['username'];
         $gavepsw = $_POST['password'];
 
@@ -20,10 +20,12 @@
         //If result has a row, it found a user with matching credentials
         if($result === 1){
             $_SESSION['logged_in'] = true;
-            header ("Location: loginsuccess.php");
+            echo "Logged in successfully";
+            exit();
         }
         else{
-            header ("Location: login.php");
+            echo "Failed to Login";
+            exit();
         }
     }
 ?>

@@ -26,7 +26,7 @@
         $usermatch = Select * from siteusers where ($username = username && $password = user_password);
 
         // Attempt to Redirect to Homepage if login successful
-        if(mysqli_stmt_execute($stmt)){
+        if($usermatch){
             // Redirect to login page
             header("location: index.html");
         } else{

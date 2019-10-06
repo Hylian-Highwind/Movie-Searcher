@@ -18,7 +18,7 @@
         $result = mysqli_query($conn, $sql_query);
         
         //If result has a row, it found a user with matching credentials
-        if($result == 1){
+        if($result > 0){
             $_SESSION['logged_in'] = true;
             header ("Location: loginsuccess.php");
         }

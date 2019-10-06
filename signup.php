@@ -41,20 +41,20 @@
          
          $insertresult = mysqli_query($conn, $sql);
          
-         echo strval($insertresult);
-         /*
+         echo strval($insertresult). "<br>";
+         
          //If Insert Query succeeds
-         if($insertresult){
+         if($insertresult == 1){
              echo "Account Created successfully.";
              echo '<a href ="login.php"> Click Here to Login </a>'
          } 
-         */
+         
          //If Insert Query Fails
-         //else{
+         else{
              echo "ERROR: Unable to execute $sql. " . mysqli_error($conn);
              echo '<a href ="signup.php"> Try Signing Up Again </a>';
              echo '<a href ="index.php"> Back to Homepage </a>';
-         //}
+         }
          
      }
  }

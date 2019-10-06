@@ -21,14 +21,6 @@
              echo '<a href ="signup.php"> Please make sure your entered passwords match </a><br>';
              exit();
          }
-         
-         //If the password field was left blank
-         if($_POST['password'] == "" || !$_POST['password']){
-            //Print an error message and do not go further with the script in this call
-             echo '<a href ="signup.php"> Please enter a password </a><br>';
-             exit();         
-         }
-
 
          //Make a Query to select one user from siteusers table in database that has a username matching the ones given by the form
          $sql_query = "select * from siteusers WHERE username= '".$gaveuname."' limit 1";

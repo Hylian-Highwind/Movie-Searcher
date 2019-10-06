@@ -38,18 +38,19 @@
          
          $sql = "INSERT INTO siteusers (username, user_password) 
          VALUES ('".$gaveuname."', '".$gavepsw."')";
-         /*
-         if(mysqli_query($conn, $sql)){
+         
+         //If Insert Query succeeds
+         if(mysqli_query($conn, $sql) != false){
              echo "Account Created successfully.";
              echo '<a href ="login.php"> Click Here to Login </a>'
          } 
-         
+         //If Insert Query Fails
          else{
              echo "ERROR: Unable to execute $sql. " . mysqli_error($conn);
              echo '<a href ="signup.php"> Try Signing Up Again </a>';
              echo '<a href ="index.php"> Back to Homepage </a>';
          }
-         */
+         
      }
  }
 ?>

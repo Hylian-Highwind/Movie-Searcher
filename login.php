@@ -20,7 +20,7 @@
 <html>
 
     <body>
-        <form>
+        <form method = "post">
             Username:<br/>
             <input type="text" placeholder="Enter Username" name="username" required> <br/>
             Password: <br/>

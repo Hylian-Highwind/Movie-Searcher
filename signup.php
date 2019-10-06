@@ -40,7 +40,8 @@
          VALUES ('".$gaveuname."', '".$gavepsw."')";
          
          $insertresult = mysqli_query($conn, $sql);
-        
+         
+         echo strval($insertresult);
          /*
          //If Insert Query succeeds
          if($insertresult){

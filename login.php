@@ -1,5 +1,9 @@
 <?php
     session_start();
+
+    if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+        header("Location: alreadyin.php");
+    }
         
     $dbhost = 'us-cdbr-iron-east-05.cleardb.net:3306';
     $dbuser = 'ba34f3f8d9d386';

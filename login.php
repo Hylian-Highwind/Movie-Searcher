@@ -16,7 +16,7 @@
 
         //capture the result of the query
         $result = mysqli_query($conn, $sql_query);
-        echo $result;
+        echo strval($result);
         //If result has a row, it found a user with matching credentials
         if($result === 1){
             $_SESSION['logged_in'] = true;

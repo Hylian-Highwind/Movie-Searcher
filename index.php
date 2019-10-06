@@ -15,8 +15,6 @@
 
 <h1> Hello World! </h1>
 
-    <h2> <a href ="register.php"> Register an Account here </a> </h2>
-
 <div class = "Wrapper" style="text-align: center">
     <div class="Homepage-Search-Area">
     <p> <font size = 6 face="Arial Black"> Welcome to the homepage. Here you can search through movies. </font></p>

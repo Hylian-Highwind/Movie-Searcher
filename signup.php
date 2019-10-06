@@ -12,7 +12,7 @@
      if(isset($_POST['username']) ){
      $gaveuname = $_POST['username'];
      $gavepsw = $_POST['password'];
-     $gaveconfpass = $_Post['confpassword'];
+     $gaveconfpass = $_POST['confpassword'];
     
      /*
      //If the password and confirm password do not match
@@ -20,7 +20,7 @@
          //Print and error message and do not go further with the script in this call
          echo '<a href ="signup.php"> Please make sure your entered passwords match </a>';
          exit();
-     }*/
+     }
      
         
      //Make a Query to select one user from siteusers table in database that has a username matching the ones given by the form
@@ -44,7 +44,7 @@
              echo '<a href ="signup.php"> Try Signing Up Again </a>';
              echo '<a href ="index.php"> Back to Homepage </a>';
          }
-     }
+     }*/
  }
 ?>
 

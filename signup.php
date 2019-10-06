@@ -39,8 +39,10 @@
          $sql = "INSERT INTO siteusers (username, user_password) 
          VALUES ('".$gaveuname."', '".$gavepsw."')";
          
+         $insertresult = mysqli_query($conn, $sql);
+
          //If Insert Query succeeds
-         if(mysqli_query($conn, $sql) != false){
+         if($insertresult){
              echo "Account Created successfully.";
              echo '<a href ="login.php"> Click Here to Login </a>'
          } 

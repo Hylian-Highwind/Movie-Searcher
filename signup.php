@@ -30,10 +30,10 @@
         
      //If result has a row, it found a user with matching credentials
      if(mysqli_num_rows($result) > 0){
-         echo "Username is taken";
-         echo '<a href ="signup.php"> Please use a different username </a>';
+         echo "Username is taken <br>";
+         echo '<a href ="signup.php"> Please use a different username </a><br>';
      }
-     /*
+     
      else{
          $sql = "INSERT INTO siteusers (username, user_password) 
          VALUES ('".$gaveuname."', '".$gavepsw."')";
@@ -45,7 +45,7 @@
              echo '<a href ="signup.php"> Try Signing Up Again </a>';
              echo '<a href ="index.php"> Back to Homepage </a>';
          }
-     }*/
+     }
  }
 ?>
 

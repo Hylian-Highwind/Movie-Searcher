@@ -37,7 +37,7 @@
      else{
          
          $sql = "INSERT INTO siteusers (username, user_password) 
-         VALUES (foo, foo)";
+         VALUES ('".$gaveuname."', '".$gavepsw."')";
          /*
          if(mysqli_query($conn, $sql)){
              echo "Account Created successfully.";

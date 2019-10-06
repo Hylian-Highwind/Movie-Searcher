@@ -12,7 +12,7 @@
     $gavepsw = $_POST['password'];
 
     //Make a Query to select one user from siteusers table in database that has a username and password matching the ones given by the form
-    $sql_query = "select Count(*) from siteusers WHERE username= '".$gaveuname."'AND user_password='".$gavepsw."'";
+    $sql_query = "select Count(*) from siteusers WHERE username= '".$gaveuname."'AND user_password='".$gavepsw."' Limit 1";
 
     //capture the result of the query
     $result = mysqli_query($conn, $sql_query);

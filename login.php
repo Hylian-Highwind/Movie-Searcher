@@ -1,32 +1,24 @@
 <?php
     session_start();
         
-    /* Database credentials. */
-    define('DB_SERVER', 'us-cdbr-iron-east-05.cleardb.net');
-    define('DB_USERNAME', 'ba34f3f8d9d386');
-    define('DB_PASSWORD', '6206b3d7');
-    define('DB_NAME', 'heroku_f4436271c441c5d');
-    
-    /* Attempt to connect to MySQL database */
-    $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-    
-    // Check connection
-    if($link === false){
-        die("ERROR: Could not connect. " . mysqli_connect_error());
-    }
+    $dbhost = 'us-cdbr-iron-east-05.cleardb.net:3306';
+    $dbuser = 'ba34f3f8d9d386';
+    $dbpass = '6206b3d7';
+    $dbname = 'heroku_f4436271c441c5d';
+    $conn = mysqli_connect($dbhost, $dbuser, $dbpass,$dbname);
+
 
     $gaveuname = $_POST['username'];
     $gavepsw = $_POST['password'];
 
     //Make a Query to select one user from siteusers table in database that has a username and password matching the ones given by the form
-    $sql_query = "select * from siteusers WHERE username= '".$gaveuname."'AND user_password='".$gavepsw.
-    "'limit 1";
+    $sql_query = "select Count(*) from siteusers WHERE username= '".$gaveuname."'AND user_password='".$gavepsw."'";
 
     //capture the result of the query
-    $result = mysqli_query($sql_query);
+    $result = mysqli_query($conn, $sql_query);
     
     //If result has a row, it found a user with matching credentials
-    if(my_sqli_num_rows($result) == 1){
+    if($result == 1){
         $_SESSION['logged_in'] = true;
         header ("Location: loginsuccess.php");
     }

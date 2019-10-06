@@ -16,7 +16,7 @@
     
      
      //If the password and confirm password do not match
-     if( !($_POST['password'] == $_Post['confpassword']) ){
+     if( !($_POST['password'] == $_POST['confpassword']) ){
          //Print and error message and do not go further with the script in this call
          echo '<a href ="signup.php"> Please make sure your entered passwords match </a>';
          exit();

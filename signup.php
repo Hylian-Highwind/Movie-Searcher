@@ -38,11 +38,12 @@
          
          $sql = "INSERT INTO siteusers (username, user_password) 
          VALUES (foo, foo)";
+         /*
          if(mysqli_query($conn, $sql)){
              echo "Account Created successfully.";
              echo '<a href ="login.php"> Click Here to Login </a>'
          } 
-         /*
+         
          else{
              echo "ERROR: Unable to execute $sql. " . mysqli_error($conn);
              echo '<a href ="signup.php"> Try Signing Up Again </a>';

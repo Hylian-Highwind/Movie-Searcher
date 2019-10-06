@@ -22,7 +22,7 @@
          exit();
      }
      
-     /*  
+     
      //Make a Query to select one user from siteusers table in database that has a username matching the ones given by the form
      $sql_query = "select * from siteusers WHERE username= '".$gaveuname."' limit 1";
      //capture the result of the query
@@ -33,6 +33,7 @@
          echo "Username is taken";
          echo '<a href ="signup.php"> Please use a different username </a>';
      }
+     /*
      else{
          $sql = "INSERT INTO siteusers (username, user_password) 
          VALUES ('".$gaveuname."', '".$gavepsw."')";

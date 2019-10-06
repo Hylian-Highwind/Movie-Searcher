@@ -1,0 +1,73 @@
+h1{
+    font-weight: bolder;    
+}
+
+th, td{
+    border: 2px solid rgb(19, 14, 5);
+}
+
+label{
+    cursor:pointer;
+    font-weight:bold;
+    font-size: 28px;
+}
+
+input[type=text]{
+    text-align: center;
+    font-size: 16px;
+}
+
+.Homepage-Search-Area{
+    align-content: center;
+    background-color: aqua;
+}
+
+.Homepage-Movie-List{
+    background-color: red; 
+}
+
+.Movie-Stuff{
+    background-color: blue; 
+    padding: 10px;
+}
+
+.Page-Poster{
+    width: 25%;    
+}
+
+.Movie-Info{
+    background-color: rgb(255, 30, 40);
+    border: 6px inset yellow;
+    width: 50%;
+    float: right;   
+    font-size: 1.7em;
+}
+
+.Score {
+    font-weight: bold;
+    font-size: 2em;
+    margin: 4px
+}
+
+.Info-Title {
+    font-weight: bold;
+    font-size: 3em;
+    margin: 4px
+}
+.Synopsis{
+    font-size: 1.3em;
+}
+
+.Review-Section{
+    background-color: rgb(0, 109, 128);
+    padding: 10px;
+}
+.Review-Table{
+    font-size: 2em;
+    text-align:center;
+    margin: 0 auto;
+    border: 2px solid black;
+    width: 100%;
+}
+
+

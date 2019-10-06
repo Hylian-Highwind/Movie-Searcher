@@ -1,20 +1,20 @@
 <?php
     session_start();
-    /*
-    $username = "kring";
-    $password = "ringabel";
-
-    if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
-        header("Location: alreadyin.php");
-    }
+        
+    /* Database credentials. */
+    define('DB_SERVER', 'us-cdbr-iron-east-05.cleardb.net');
+    define('DB_USERNAME', 'ba34f3f8d9d386');
+    define('DB_PASSWORD', '6206b3d7');
+    define('DB_NAME', 'heroku_f4436271c441c5d');
     
-    if(isset($_POST['username']) && isset($_POST['password']) ){
-        if($_POST['username'] == $username && $_POST['password'] == $password){
-            $_SESSION['logged_in'] = true;
-            header ("Location: loginsuccess.php");
-        }
+    /* Attempt to connect to MySQL database */
+    $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+    
+    // Check connection
+    if($link === false){
+        die("ERROR: Could not connect. " . mysqli_connect_error());
     }
-    */
+
     $gaveuname = $_POST['username'];
     $gavepsw = $_POST['password'];
 
@@ -29,7 +29,9 @@
     if(my_sqli_num_rows($result) == 1){
         $_SESSION['logged_in'] = true;
         header ("Location: loginsuccess.php");
-
+    }
+    else{
+        header ("Location: login.php");
     }
 ?>
 

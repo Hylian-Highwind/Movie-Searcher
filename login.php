@@ -4,7 +4,7 @@
     $password = "ringabel";
 
     if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
-        header("Location: index.php");
+        header("Location: alreadyin.php");
     }
     
     if(isset($_POST['username']) && isset($_POST['password']) ){

@@ -10,7 +10,7 @@
     if(isset($_POST['username']) && isset($_POST['password']) ){
         if($_POST['username'] == $username && $_POST['password'] == $password){
             $_SESSION['logged_in'] = true;
-            header ("Location: index.php");
+            header ("Location: loginsuccess.php");
         }
     }
 ?>

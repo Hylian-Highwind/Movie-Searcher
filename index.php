@@ -15,7 +15,7 @@
 
 <h1> Hello World! </h1>
 
-    <h2><a href ="login.html"> Login Link</a></h2>
+    <h2><a href ="login.php"> Login Link</a></h2>
     
 <div class = "Wrapper" style="text-align: center">
     <div class="Homepage-Search-Area">

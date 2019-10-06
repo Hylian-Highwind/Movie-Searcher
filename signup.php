@@ -32,10 +32,16 @@
             echo '<a href ="signup.php"> Please use a different username </a>';
         }
         else{
-            echo "Account Created";
             $sql = "INSERT INTO siteusers (username, user_password) 
             VALUES ('$gaveuname', '$gavepsw')";
-            echo '<a href ="login.php"> Click Here to Login </a>'
+            if(mysqli_query($conn, $sql)){
+                echo "Account Created successfully.";
+                echo '<a href ="login.php"> Click Here to Login </a>'
+            } else{
+                echo "ERROR: Unable to execute $sql. " . mysqli_error($conn);
+                echo '<a href ="signup.php"> Try Signing Up Again </a>';
+                echo '<a href ="index.php"> Back to Homepage </a>';
+            }
         }
     }
 ?>

@@ -1,5 +1,6 @@
 <?php
     session_start();
+    /*
     $username = "kring";
     $password = "ringabel";
 
@@ -12,6 +13,23 @@
             $_SESSION['logged_in'] = true;
             header ("Location: loginsuccess.php");
         }
+    }
+    */
+    $gaveuname = $_POST['username'];
+    $gavepsw = $_POST['password'];
+
+    //Make a Query to select one user from siteusers table in database that has a username and password matching the ones given by the form
+    $sql_query = "select * from siteusers WHERE username= '".$gaveuname."'AND user_password='".$gavepsw.
+    "'limit 1";
+
+    //capture the result of the query
+    $result = mysqli_query($sql_query);
+    
+    //If result has a row, it found a user with matching credentials
+    if(my_sqli_num_rows($result) == 1){
+        $_SESSION['logged_in'] = true;
+        header ("Location: loginsuccess.php");
+
     }
 ?>
 

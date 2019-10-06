@@ -35,6 +35,7 @@
      }
      
      else{
+         
          $sql = "INSERT INTO siteusers (username, user_password) 
          VALUES ('".$gaveuname."', '".$gavepsw."')";
          if(mysqli_query($conn, $sql)){
@@ -47,7 +48,7 @@
              echo '<a href ="signup.php"> Try Signing Up Again </a>';
              echo '<a href ="index.php"> Back to Homepage </a>';
          }
-         /*
+         */
      }
  }
 ?>

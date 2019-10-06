@@ -8,7 +8,7 @@
     $dbname = 'heroku_f4436271c441c5d';
     $conn = mysqli_connect($dbhost, $dbuser, $dbpass,$dbname);
 
-    if(isset($_POST['username']) ){
+    /* if(isset($_POST['username']) ){
         $gaveuname = $_POST['username'];
         $gavepsw = $_POST['password'];
         $gaveconfpass = $_Post['confpassword'];
@@ -43,7 +43,7 @@
                 echo '<a href ="index.php"> Back to Homepage </a>';
             }
         }
-    }
+    }*/
 ?>
 
 <!DOCTYPE HTML>

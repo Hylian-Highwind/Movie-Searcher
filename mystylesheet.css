@@ -1,0 +1,187 @@
+body{ 
+    background-image: url("img/bg.jpg");
+    /*background-size: cover;*/
+
+    background-size: 100%;
+}
+
+button{
+    cursor:pointer;
+
+}
+
+textarea{
+    width: 50em;
+    height: 5em;
+    resize: none;
+}
+
+h1{
+    font-weight: bolder;    
+}
+
+th, td{
+    border: 2px solid rgb(19, 14, 5);
+    background-color: goldenrod;
+}
+
+label{
+    font-weight:bold;
+    font-size: 28px;
+}
+
+input[type=text], input[type=password]{
+    text-align: center;
+    font-size: 24px;
+    margin-top: 6x;
+    margin-bottom: 6px;
+}
+
+.Links{
+    background-color: White;
+    display: inline-block;
+    padding:10px;
+}
+
+.Homepage-Search-Area{
+    align-content: center;
+    background-color: aqua;
+}
+
+.Homepage-Movie-List{
+    background-color: red; 
+}
+
+.previewImage{
+    max-width:100%;
+    max-height:100%;
+    height: auto;
+    width: auto;
+}
+
+#searchResultHead{
+    font-size: 4em;
+    margin-bottom: -5px;
+}
+
+.searchTable{
+    font-size: 2em;
+    text-align: center;
+    margin: 5px auto;
+    border: 2px solid black;
+}
+
+.RedirectButton{
+    /* Styling for buttons available free at
+    https://1stwebdesigner.com/free-code-snippets-css-buttons/
+    https://codepen.io/ben_jammin/pen/syaCq*/
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    padding: 3px 20px;
+    margin: 2px;
+    cursor: pointer;
+    border: 1px solid #bbb;
+    overflow: visible;
+    font: bold 13px arial, helvetica, sans-serif;
+    text-decoration: none;
+    white-space: nowrap;
+    color: black;
+}
+
+/* Styles used to position the Submission forms with wrappers*/
+
+.Wrapper{
+    text-align: center;
+}
+.submission{
+    display: inline-block;
+    position: relative;
+    top: 250px;
+}
+
+.LoginRedirect{
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+/* Styles for the Movie Information Pages*/
+.Movie-Stuff{
+    background-color: blue; 
+    padding: 10px;
+}
+
+.Page-Poster{
+    width: 25%;    
+    box-shadow: 11px 11px rgba(0, 0, 0, 0.6);
+    border: 12px outset rgb(243, 184, 22);
+}
+
+.Movie-Info{
+    background-color: rgb(255, 30, 40);
+    border: 6px inset yellow;
+    width: 50%;
+    float: right;   
+    font-size: 1.7em;
+}
+
+.Score {
+    font-weight: bold;
+    font-size: 2em;
+    margin: 4px;
+}
+
+.Info-Title {
+    font-weight: bold;
+    font-size: 3em;
+    margin: 4px;
+}
+.Synopsis{
+    font-size: 1.3em;
+}
+
+.Review-Section{
+    background-color: rgb(0, 109, 128);
+    padding: 10px;
+}
+.Review-Table{
+    font-size: 2em;
+    text-align:center;
+    margin: 0 auto;
+    border: 2px solid black;
+    width: 100%;
+}
+
+#reviewSubmissionDiv{
+    align-content: center;
+
+}
+
+#scoreEntry{
+    font-size: 1.25em;
+    font-weight: bold;
+    width: 2em;
+    text-align: right;
+    padding-right: 5px;
+    border-width: 0;
+
+    font-family: 'Cambria', sans-serif;
+
+}
+
+#scoreEntry::-webkit-inner-spin-button, 
+#scoreEntry::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+#scoreEnterDiv{
+    background-color: white;
+    display: inline-block;
+    font-family: 'Cambria', sans-serif;
+}
+
+.returnbutton{
+    margin-bottom: 5px;
+}
+

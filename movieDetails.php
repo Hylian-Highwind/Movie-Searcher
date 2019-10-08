@@ -14,23 +14,33 @@
     if(mysqli_num_rows($result) > 0){
         //Get the result's row as an associative array
         $row = mysqli_fetch_assoc($result);
+        
         $title = $row["movie_title"];
         $poster = $row["poster_path"];
         $synopsis = $row["synopsis"];
         $movieid = $row["movie_id"];
+
+
+        //Get the Average score across all reviews associated with this movie_id
+        $AVEquery = "Select AVG(movie_reviews.score) AS 'average_score' from movie_reviews where movie_id= '".$movieid."' 
+        GROUP BY movie_reviews.movie_id";
+        $AVEresult = mysqli_query($conn, $AVEquery);
+        $AVErow = mysqli_fetch_assoc($AVEresult);
+        //Round the Average Score Float to 1 decimal place
+        $averagescore = 0;
+        $averagescore = round($AVErow['average_score'], 1);
+        
+        //If no Scores have been submitted, display a dash instead of 0
+        if($averagescore == 0){
+            $averagescore ='-';
+        }
 
     }
     else{
         echo "Couldn't find the movie";
     }
     
-    //Get the Average score across all reviews associated with this movie_id
-    $AVEquery = "Select AVG(movie_reviews.score) AS 'average_score' from movie_reviews where '".$movieid."' 
-    GROUP BY movie_reviews.movie_id";
-    $AVEresult = mysqli_query($conn, $AVEquery);
-    $AVErow = mysqli_fetch_assoc($AVEresult);
-    //Round the Average Score Float to 1 decimal place
-    $averagescore = round($AVErow['average_score'], 1);
+    
 
     
     //Handles Review Submission

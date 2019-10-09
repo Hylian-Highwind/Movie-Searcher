@@ -18,7 +18,7 @@
     <body>
         
     <div style ="text-align: center">
-        <div class="Links submission" >
+        <div class="submission" >
             <h1>Logged out successfully</h1>
 
             <br>

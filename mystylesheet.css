@@ -1,8 +1,10 @@
 body{ 
     background-image: url("img/bg.jpg");
-    /*background-size: cover;*/
-
     background-size: 100%;
+
+    margin:0;
+
+    padding:0;
 }
 
 button{
@@ -20,7 +22,7 @@ h1{
     font-weight: bolder;    
 }
 
-th, td{
+th, tr, td{
     border: 2px solid rgb(19, 14, 5);
     background-color: goldenrod;
 }
@@ -28,6 +30,7 @@ th, td{
 label{
     font-weight:bold;
     font-size: 28px;
+    
 }
 
 input[type=text], input[type=password]{
@@ -38,18 +41,33 @@ input[type=text], input[type=password]{
 }
 
 .Links{
+    position: absolute;
+    left: 100%;
+    top: 0;
+    transform:translateX(-100%);
+    width: 15%;
+
+
     background-color: White;
-    display: inline-block;
-    padding:10px;
+    padding: 5px;
+    border: 2px solid black;
+    margin: 0px;
+
 }
 
 .Homepage-Search-Area{
     align-content: center;
-    background-color: aqua;
+    background-color: rgba(0, 255, 255, 0.6);
+    border: 2px solid gray;
+
+    padding-bottom: 20px;
+
 }
 
 .Homepage-Movie-List{
-    background-color: red; 
+
+    border: 2px solid black;
+    background-color: rgba(91, 175, 196, 0.6);
 }
 
 .previewImage{
@@ -107,18 +125,19 @@ input[type=text], input[type=password]{
 
 /* Styles for the Movie Information Pages*/
 .Movie-Stuff{
-    background-color: blue; 
+    background-color: rgba(91, 175, 196, 0.6); 
     padding: 10px;
 }
 
 .Page-Poster{
     width: 25%;    
+    height: auto;
     box-shadow: 11px 11px rgba(0, 0, 0, 0.6);
     border: 12px outset rgb(243, 184, 22);
 }
 
 .Movie-Info{
-    background-color: rgb(255, 30, 40);
+    background-color: rgba(255, 30, 40, 0.9);
     border: 6px inset yellow;
     width: 50%;
     float: right;   
@@ -141,7 +160,7 @@ input[type=text], input[type=password]{
 }
 
 .Review-Section{
-    background-color: rgb(0, 109, 128);
+    background-color: rgba(0, 109, 128, 0.6);
     padding: 10px;
 }
 .Review-Table{
@@ -153,8 +172,11 @@ input[type=text], input[type=password]{
 }
 
 #reviewSubmissionDiv{
+    display: inline-block;
     align-content: center;
-
+    background-color: rgba(0, 109, 128, 1);
+    
+    padding: 0px 10px 5px 10px;
 }
 
 #scoreEntry{

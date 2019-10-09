@@ -1,6 +1,6 @@
 <?php
     session_start();
-
+    
     include 'DBConfig.php';
 ?>
 
@@ -14,18 +14,27 @@
 <div class="Wrapper" style ="position: relative;">
     <div style ="text-align: center">
         <div class="Links">
-            <h1>LINKS</h1>
-            <label> Login Here </label><br>
-            <button type="button" class="RedirectButton" onClick="location.href='login.php'">Login</button>
+            <h2>LINKS</h2>
+
+            <!--PHP used to only display buttons needed when or when not logged in.-->
+            <?php
+            if(isset($_SESSION['logged_in'])){
+                echo "<label> Add a Movie Here </label><br>
+                <button type='button' class='RedirectButton' onClick='location.href=&quot;newMovieInfo.php&quot;'>Submit a Movie</button>
+
+                <br><label> Logout Here </label><br>
+                <button type='button' class='RedirectButton' onClick='location.href=&quot;logout.php&quot;'>Logout</button>";
+            }
+            else{
+                echo"<label> Login Here </label><br>
+                <button type='button' class='RedirectButton' onClick='location.href=&quot;login.php&quot;'>Login</button>
+                
+                <br><label> Create an Account Here </label><br>
+                <button type='button' class='RedirectButton' onClick='location.href= &quot;signup.php&quot;'>Sign Up</button>";
+            }
             
-            <br><label> Create an Account Here </label><br>
-            <button type="button" class="RedirectButton" onClick="location.href='signup.php'">Sign Up</button>
-
-            <br><label> Add a Movie Here </label><br>
-            <button type="button" class="RedirectButton" onClick="location.href='newMovieInfo.php'">Submit a Movie</button>
-
-            <br><label> Logout Here </label><br>
-            <button type="button" class="RedirectButton" onClick="location.href='logout.php'">Logout</button>
+            ?>
+            
         </div>
     </div> 
 </div>

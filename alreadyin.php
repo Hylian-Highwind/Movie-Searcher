@@ -5,6 +5,21 @@
     }
 ?>
 
-<h2> Already Logged In </h2>
+<!DOCTYPE HTML>
 
-<h2><a href ="index.php"> Back to Home Page </a> </h2>
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="mystylesheet.css">
+
+    </head>
+    <body>
+        <div class ="Wrapper">
+        <div class ="submission">
+            <h2> Already Logged In </h2>
+
+            <h2><a href ="index.php"> Back to Home Page </a> </h2>
+        </div>
+        </div>
+    </body>
+
+</html>

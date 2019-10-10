@@ -51,6 +51,9 @@
             $user = $_POST['username'];
             $score = $_POST['score'];
             $comment = $_POST['comment'];
+            
+            $comment = str_replace("'", "\'", $comment);
+
 
             //SELECT from the movie_reviews to find if a review is recorded for this user AND this movie_id
             $sql_query = "select * from movie_reviews WHERE username= '".$user."' AND movie_id= '".$movieid."' limit 1";

@@ -13,14 +13,16 @@
     $dbname = 'heroku_f4436271c441c5d';
     $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
     */
-    
+
     include 'DBConfig.php';
 
     //echo "Starting File Check <br>";
 
-    //Checks if a movie with this title is already uploaded
+    //Checks if the title of the movie has been set
     if(isset($_POST['title']) ){
         //echo "Inside if statement <br>";
+        
+        //Does various checks for adding the image file
         $file = $_FILES['file'];
 
         $fileName = $_FILES['file']['name'];
@@ -44,8 +46,43 @@
                     //Set Destination to the server's img folder
                     $fileDestination = 'img/'.$fileName;
                     
-                    //move_uploaded_file($fileTMPName, $fileDestination);
-                    //header("Location: index.php?uploadsuccess");
+                    //Gets the title and synopsis from the form submitted
+                    $title = $_POST['title'];
+                    $synopsis = $_POST['synopsis'];
+
+                    //replace to add slashes before single quotes and ensure their inclusion in Title or Synopsis
+                    $title = str_replace("'", "\'", $title);
+                    $synopsis = str_replace("'", "\'", $synopsis);
+                    
+                    //Make a Query with select to find a movie with matching title
+                    //NOTE: Currently cannot handle different movies with identical titles given
+                    $sql_query = "select * from movies WHERE movie_title= '".$title."' limit 1";
+                    //capture the result of the query
+                    $result = mysqli_query($conn, $sql_query);
+
+                    //If result has a row, it found a movie with this title
+                    if(mysqli_num_rows($result) > 0){
+                        echo "<br>This Movie title is already in the Database<br>";
+                        echo '<a href ="newMovieInfo.php?alreadyIn"> Want to add another movie? </a><br>';
+                        exit();
+                    }
+
+                    //If nothing found, the movie can be inserted. Move uploaded file into destination folder and insert this movie row
+                    else{
+                        //Make sure fileDestination has a value
+                        if($fileDestination){
+                            move_uploaded_file($fileTMPName, $fileDestination);
+                            $sql = "INSERT INTO movies (movie_title, poster_path, synopsis) 
+                            VALUES ('".$title."', '".$fileDestination."', '".$synopsis."')";
+                            
+                            $insertResult = mysqli_query($conn, $sql);                           
+                            
+                            header("Location: index.php?uploadsuccess");
+
+                        }           
+                        
+                    }
+
                 }
                 else{
                     echo "File is too large";
@@ -68,34 +105,7 @@
 
         //echo "Passed File check<br>";
         
-        //Gets the title and synopsis from the form submitted
-        $title = $_POST['title'];
-        $synopsis = $_POST['synopsis'];
-         
-        //Make a Query with select to find a movie with matching title
-        //NOTE: Currently cannot handle different movies with identical titles given
-        $sql_query = "select * from movies WHERE movie_title= '".$title."' limit 1";
-        //capture the result of the query
-        $result = mysqli_query($conn, $sql_query);
-
-        //If result has a row, it found a movie with this title
-        if(mysqli_num_rows($result) > 0){
-            echo "<br>This Movie title is already in the Database<br>";
-            echo '<a href ="newMovieInfo.php?alreadyIn"> Want to add another movie? </a><br>';
-            exit();
-        }
-        //If nothing found, the movie can be inserted. Move uploaded file into destination folder and insert this movie row
-        else{
-            //Make sure fileDestination has a value
-            if($fileDestination){
-                move_uploaded_file($fileTMPName, $fileDestination);
-                $sql = "INSERT INTO movies (movie_title, poster_path, synopsis) 
-                VALUES ('".$title."', '".$fileDestination."', '".$synopsis."')";
-                
-                $result = mysqli_query($conn, $sql);
-            }           
-            
-        }
+        
     }
 
 
